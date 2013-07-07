@@ -1,0 +1,19 @@
+server {
+  listen {{ nginx.port }} default_server;
+  server_name {{ app_domain }};
+  root /opt/{{ app_name }}/public;
+
+  client_max_body_size 20M;
+  keepalive_timeout 10;
+
+  passenger_enabled on;
+  passenger_user passenger;
+  passenger_show_version_in_header off;
+  passenger_friendly_error_pages off;
+
+  rails_env {{ rails_env }};
+
+  error_page 500 502 503 504 /500.html;
+  error_page 404             /404.html;
+  error_page 422             /422.html;
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'yaml'
+require 'pathname'
+
+bin_file = Pathname.new(__FILE__).realpath
+$:.unshift File.expand_path('../../lib', bin_file)
+require 'paramsfile'
+
+DEFAULT_PARAMS_FILE = './parameters.yml'
+
+opts = { :template => ARGV[0],
+         :params   => File.expand_path(ARGV[1] || DEFAULT_PARAMS_FILE) }
+
+file = Paramsfile::Paramsfile.new(opts[:template], YAML.load(File.open(opts[:params])))
+
+puts "==> Writing..."
+file.write
+puts "==> Done!"

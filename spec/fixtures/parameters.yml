@@ -1,0 +1,8 @@
+sprocketcorp:
+  app_name: sprocketcorp
+  app_domain: www.sprocketcorp.net
+  rails_env: production
+  nginx:
+    port: 80
+
+    
