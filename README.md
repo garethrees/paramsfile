@@ -1,6 +1,8 @@
 Paramsfile
 ==========
 
+[![Code Climate](https://codeclimate.com/github/garethrees/paramsfile.png)](https://codeclimate.com/github/garethrees/paramsfile)
+
 Dynamically generate configuration files with YAML and Mustache
 
 Usage
