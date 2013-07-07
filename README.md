@@ -32,3 +32,13 @@ Generate the config file
 ```sh
 $ ./bin/paramsfile nginx.conf.mustache
 ```
+
+Result
+
+```nginx
+# ./nginx.conf
+
+server {
+  server_name www.sprocketcorp.com;
+}
+```
